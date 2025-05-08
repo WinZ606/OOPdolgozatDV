@@ -1,0 +1,41 @@
+body{
+    text-align: center;
+}
+
+.valaszok{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    
+}
+
+.valaszok p{
+    border: solid 1px black;
+    width: 90%;
+    margin: auto;
+}
+
+.kerdes{
+    border: 1px solid black;
+    width: 30%;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+@media screen and (max-width:800px) {
+    body{
+        max-width: 90%;
+    }
+}
+@media screen and (max-width:600px) {
+    body{
+        max-width: 80%;
+    }
+}
+@media screen and (max-width:400px) {
+    body{
+        max-width: 100%;
+    }
+    .valaszok{
+        grid-template-columns: 1fr;
+    }
+}
