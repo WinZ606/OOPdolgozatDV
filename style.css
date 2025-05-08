@@ -1,41 +1,111 @@
-body{
-    text-align: center;
+body {
+  text-align: center;
 }
 
-.valaszok{
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    
+.valaszok {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
-.valaszok p{
-    border: solid 1px black;
-    width: 90%;
-    margin: auto;
+.valaszok p {
+  border: solid 1px black;
+  width: 90%;
+  margin: auto;
 }
 
-.kerdes{
-    border: 1px solid black;
-    width: 30%;
-    margin: auto;
-    margin-bottom: 30px;
+.kerdes {
+  border: 1px solid black;
+  width: 30%;
+  margin: auto;
+  margin-bottom: 30px;
 }
 
-@media screen and (max-width:800px) {
-    body{
-        max-width: 90%;
-    }
+/* konténer a kérdéseknek */
+.tarolo {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
 }
-@media screen and (max-width:600px) {
-    body{
-        max-width: 80%;
-    }
+
+/* egy-egy kérdés „kártya” */
+.kerdes {
+  background: #fff;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
-@media screen and (max-width:400px) {
-    body{
-        max-width: 100%;
-    }
-    .valaszok{
-        grid-template-columns: 1fr;
-    }
+
+/* kérdésszöveg kisebb, világosszürke aláhúzással */
+.kerdes h3:first-of-type {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 0.25rem;
+}
+.kerdes h3:last-of-type {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+/* válaszgombok disztró-ликазион */
+.valaszok {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+/* alap gomb-stílus */
+.valaszok button {
+  padding: 0.75rem;
+  border: none;
+  border-radius: 0.375rem;
+  background: #f0f0f0;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+/* hover-effekt */
+.valaszok button:not(:disabled):hover {
+  background: #e0e0e0;
+}
+
+/* kattintás után letiltott gomb */
+.valaszok button:disabled {
+  cursor: default;
+  opacity: 0.7;
+}
+
+/* pontszám */
+.pontok {
+  text-align: center;
+  font-size: 1.1rem;
+  margin: 2rem 0;
+}
+
+/* mobilra egymás alá rendezzük a gombokat */
+@media (max-width: 600px) {
+  .valaszok {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    max-width: 90%;
+  }
+}
+@media screen and (max-width: 600px) {
+  body {
+    max-width: 80%;
+  }
+}
+@media screen and (max-width: 400px) {
+  body {
+    max-width: 100%;
+  }
+  .valaszok {
+    grid-template-columns: 1fr;
+  }
 }

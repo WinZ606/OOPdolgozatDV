@@ -1,4 +1,9 @@
 import { szenvedoMondatok } from "./angol.js";
-import Tesztkerdesek from "./Tesztkerdesek.js";
+import TesztKerdesek from "./Tesztkerdesek.js";
 
-new Tesztkerdesek(szenvedoMondatok,document.querySelector(".tarolo"),document.querySelector(".pontok"))
+document.addEventListener("DOMContentLoaded", () => {
+    const taroloElem = document.querySelector(".tarolo");
+    const pontokElem = document.querySelector(".pontok");
+    pontokElem.textContent = `Pontjaid: 0`;
+    new TesztKerdesek(szenvedoMondatok, taroloElem, pontokElem);
+  });
